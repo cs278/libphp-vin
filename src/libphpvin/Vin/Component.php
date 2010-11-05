@@ -23,17 +23,24 @@
  * THE SOFTWARE.
  *
  * @package		libphp-vin
+ * @subpackage	Vin
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @version		
  */
-namespace libphpvin;
+namespace libphpvin\Vin;
 
 /**
  * @package		libphp-vin
+ * @subpackage	Vin
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-interface Vin extends Vin\Component, Validatable
+interface Component
 {
+	public function __construct($value);
+
+	public function getValue();
+
+	public function setValue($value);
 }
