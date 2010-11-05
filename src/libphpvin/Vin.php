@@ -34,13 +34,11 @@ namespace libphpvin;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-interface Vin
+interface Vin extends Validatable
 {
 	public function __construct($value);
 
 	public function getValue();
 
 	public function setValue($value);
-
-	public function isValid();
 }

@@ -38,15 +38,13 @@ namespace libphpvin\CheckDigit;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-interface Calculator
+interface Calculator extends \libphpvin\Validatable
 {
 	public function __construct($vin);
 
 	public function getVin();
 
 	public function setVin($vin);
-
-	public function isValid();
 
 	public function getCheckDigit();
 }
