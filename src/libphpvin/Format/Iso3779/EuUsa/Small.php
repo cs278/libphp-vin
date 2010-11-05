@@ -40,11 +40,11 @@ class Small extends \libphpvin\Format\Iso3779\EuUsa
 {
 	public function getManufacturerIdentifier()
 	{
-
+		return substr($this->getVIS(), 2, 3);
 	}
 
 	public function getSerialNumber()
 	{
-
+		return substr($this->getVIS(), 5);
 	}
 }

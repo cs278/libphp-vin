@@ -40,6 +40,6 @@ class Large extends \libphpvin\Format\Iso3779\EuUsa
 {
 	public function getSerialNumber()
 	{
-
+		return substr($this->getVIS(), 2);
 	}
 }
