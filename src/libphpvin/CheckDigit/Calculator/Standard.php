@@ -39,7 +39,7 @@ namespace libphpvin\CheckDigit\Calculator;
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @link		http://en.wikipedia.org/wiki/VIN#Check_digit_calculation
  */
-class Standard extends Abstract
+class Standard extends Base
 {
 	/**
 	 * Calculate the check digit of a VIN number

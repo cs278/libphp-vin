@@ -36,7 +36,7 @@ namespace libphpvin\CheckDigit\Calculator;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-abstract class Abstract implements \libphpvin\CheckDigit\Calculator
+abstract class Base implements \libphpvin\CheckDigit\Calculator
 {
 	protected $_vin;
 
