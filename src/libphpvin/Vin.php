@@ -36,4 +36,6 @@ namespace libphpvin;
  */
 interface Vin extends Vin\Component, Validatable
 {
+	public function getValidator();
+	public function setValidator(\libphpvin\Vin\Validator $validator);
 }
