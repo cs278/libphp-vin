@@ -52,7 +52,7 @@ class Validator implements \libphpvin\Vin\Validator
 
 	public function validate(\libphpvin\Vin $vin)
 	{
-		$result = new \libphp\Validator\Result($vin);
+		$result = new \libphpvin\Vin\Validator\Result($vin);
 
 		$value = $vin->getValue();
 		$length = strlen($value);
