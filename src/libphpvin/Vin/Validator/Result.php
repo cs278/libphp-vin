@@ -38,7 +38,7 @@ namespace libphpvin\Vin\Validator;
  */
 class Result implements \IteratorAggregate, \Countable, \libphpvin\Validatable
 {
-	protected $_message = array();
+	protected $_errors = array();
 	protected $_vin;
 
 	public function __construct(\libphpvin\Vin $vin)
