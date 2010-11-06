@@ -36,7 +36,7 @@ namespace libphpvin\Format;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Iso3779 extends \libphpvin\Vin\Component\Base
+class Iso3779 extends \libphpvin\Vin\Base
 {
 	public function getWMI()
 	{
