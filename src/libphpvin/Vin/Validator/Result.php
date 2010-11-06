@@ -36,7 +36,7 @@ namespace libphpvin\Vin\Validator;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Result implements IteratorAggregate, Countable, \libphpvin\Validatable
+class Result implements \IteratorAggregate, \Countable, \libphpvin\Validatable
 {
 	protected $_message = array();
 	protected $_vin;
