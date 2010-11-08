@@ -23,23 +23,23 @@
  * THE SOFTWARE.
  *
  * @package		libphp-vin
- * @subpackage	CheckDigit\Calculator
+ * @subpackage	Format\Iso3779\EuUsa
  * @copyright	Copyright (c) 2008-2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @version		
  */
-namespace libphpvin\CheckDigit\Calculator;
+namespace libphpvin\Format\Iso3779\EuUsa;
 
 /**
  * Standard VIN check digit calculator
  *
  * @package		libphp-vin
- * @subpackage	CheckDigit\Calculator
+ * @subpackage	Format\Iso3779\EuUsa
  * @copyright	Copyright (c) 2008-2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @link		http://en.wikipedia.org/wiki/VIN#Check_digit_calculation
  */
-class Standard extends Base
+class CheckDigitCalculator extends \libphpvin\Vin\CheckDigitCalculator\Base
 {
 	/**
 	 * Calculate the check digit of a VIN number

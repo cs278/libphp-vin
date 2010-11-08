@@ -23,30 +23,42 @@
  * THE SOFTWARE.
  *
  * @package		libphp-vin
- * @subpackage	CheckDigit\Calculator
+ * @subpackage	Vin\CheckDigitCalculator
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @version		
  */
-namespace libphpvin\CheckDigit\Calculator;
+namespace libphpvin\Vin\CheckDigitCalculator;
 
 /**
- * VIN check digit calculator for VINs with no check digit
- *
  * @package		libphp-vin
- * @subpackage	CheckDigit\Calculator
+ * @subpackage	Vin\CheckDigitCalculator
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class None extends Base
+abstract class Base implements \libphpvin\Vin\CheckDigitCalculator
 {
-	public function isValid()
+	protected $_vin;
+
+	public function __construct($vin)
 	{
-		return true;
+		$this->setVin($vin);
 	}
 
-	public function getCheckDigit()
+	public function getVin()
 	{
-		return '';
+		return $this->_vin;
+	}
+
+	public function setVin($vin)
+	{
+		$this->_vin = $vin;
+
+		return $this;
+	}
+
+	public function isValid()
+	{
+		return $this->getVin()->getCheckDigit() === $this->getCheckDigit();
 	}
 }
