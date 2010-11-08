@@ -70,6 +70,6 @@ class Result implements \IteratorAggregate, \Countable, \libphpvin\Validatable
 
 	public function getIterator()
 	{
-		return new ArrayIterator($this->getErrors());
+		return new \ArrayIterator($this->getErrors());
 	}
 }
