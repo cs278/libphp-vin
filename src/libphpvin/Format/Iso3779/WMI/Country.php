@@ -36,19 +36,12 @@ namespace libphpvin\Format\Iso3779\WMI;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Country extends \libphpvin\Vin\Component\Base
+class Country extends Base
 {
-	protected $_region;
+	const POSITION = 1;
 
-	public function __construct($value, Region $region)
+	protected function _getContext(\libphpvin\Format\Iso3779\WMI $value)
 	{
-		$this->setValue($value, $region);
-	}
-
-	public function setValue($value, Region $region)
-	{
-		parent::setValue($value);
-
-		$this->_region = $region;
+		return $value->getRegion();
 	}
 }

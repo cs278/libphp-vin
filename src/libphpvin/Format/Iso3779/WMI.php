@@ -40,16 +40,16 @@ class WMI extends \libphpvin\Vin\Component\Base
 {
 	public function getRegion()
 	{
-		return new WMI\Region($this->_value[0]);
+		return new WMI\Region($this);
 	}
 
 	public function getCountry()
 	{
-		return new WMI\Country($this->_value[1], $this->getRegion());
+		return new WMI\Country($this);
 	}
 
 	public function getManufacturer()
 	{
-		return new WMI\Manufacturer($this->_value[2], $this->getCountry());
+		return new WMI\Manufacturer($this);
 	}
 }

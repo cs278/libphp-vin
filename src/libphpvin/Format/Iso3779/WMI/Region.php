@@ -36,8 +36,10 @@ namespace libphpvin\Format\Iso3779\WMI;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Region extends \libphpvin\Vin\Component\Base
+class Region extends Base
 {
+	const POSITION = 0;
+
 	static protected $_regions = array(
 		'A'	=> self::AFRICA,
 		'B'	=> self::AFRICA,
@@ -83,5 +85,10 @@ class Region extends \libphpvin\Vin\Component\Base
 	public function getName()
 	{
 		return self::$_regions[$this->getValue()];
+	}
+
+	protected function _getContext(\libphpvin\Format\Iso3779\WMI $value)
+	{
+		return null;
 	}
 }

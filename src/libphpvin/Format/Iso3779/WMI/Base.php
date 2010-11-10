@@ -36,12 +36,21 @@ namespace libphpvin\Format\Iso3779\WMI;
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class Manufacturer extends Base
+abstract class Base extends \libphpvin\Vin\Component\Base
 {
-	const POSITION = 2;
+	protected $_context;
 
-	protected function _getContext(\libphpvin\Format\Iso3779\WMI $value)
+	public function setValue($value)
 	{
-		return $value->getCountry();
+		if (!$value instanceof \libphpvin\Format\Iso3779\WMI)
+		{
+			throw new \InvalidArgumentException('Value must be instance of \libphpvin\Format\Iso3779\WMI');
+		}
+
+		$this->_region = $this->_getContext($value);
+
+		return parent::setValue(substr($value, static::POSITION, 1));
 	}
+
+	abstract protected function _getContext(\libphpvin\Format\Iso3779\WMI $value);
 }
