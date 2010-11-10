@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<phpunit
+	bootstrap="tests/bootstrap.php"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	syntaxCheck="true"
+	verbose="true"
+	strict="true"
+>
+	<filter>
+		<blacklist>
+			<file>src/libphpvin/Autoloader.php</file>
+		</blacklist>
+	</filter>
+
+	<testsuites>
+		<testsuite name="libphp-vin">
+			<directory suffix=".php">tests/libphpvin</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
