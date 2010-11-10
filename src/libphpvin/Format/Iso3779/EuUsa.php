@@ -59,4 +59,9 @@ abstract class EuUsa extends \libphpvin\Format\Iso3779
 	}
 
 	abstract function getSerialNumber();
+
+	public function resetValidator()
+	{
+		$this->setValidator(new EuUsa\Validator);
+	}
 }

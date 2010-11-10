@@ -40,6 +40,13 @@ abstract class Base extends Component\Base implements \libphpvin\Vin
 {
 	protected $_validator;
 
+	public function __construct($vin)
+	{
+		parent::__construct($vin);
+
+		$this->resetValidator();
+	}
+
 	public function getValidator()
 	{
 		return $this->_validator;
@@ -51,4 +58,6 @@ abstract class Base extends Component\Base implements \libphpvin\Vin
 
 		return $this;
 	}
+
+	abstract public function resetValidator();
 }

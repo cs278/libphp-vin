@@ -52,4 +52,9 @@ class Iso3779 extends \libphpvin\Vin\Base
 	{
 		return new Iso3779\VIS(substr($this->_value, 9));
 	}
+
+	public function resetValidator()
+	{
+		$this->setValidator(new Iso3779\Validator);
+	}
 }
