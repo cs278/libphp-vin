@@ -56,4 +56,9 @@ class Base implements \libphpvin\Vin\Component
 
 		return $this;
 	}
+
+	public function __toString()
+	{
+		return $this->getValue();
+	}
 }
