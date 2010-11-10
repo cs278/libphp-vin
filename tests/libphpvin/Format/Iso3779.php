@@ -4,6 +4,49 @@ namespace libphpvin\tests\Format;
 
 class Iso3779 extends \PHPUnit_Framework_TestCase
 {
+	private $vin;
+
+	public function setUp()
+	{
+		$this->vin = new \libphpvin\Format\Iso3779('HFC8263LK927HD920');
+	}
+
+	/**
+	 * @test
+	 */
+	public function getValidator()
+	{
+		$this->assertInstanceOf('\libphpvin\Format\Iso3779\Validator', $this->vin->getValidator());
+	}
+
+	/**
+	 * @test
+	 */
+	public function setValidator()
+	{
+		$original = '\libphpvin\Format\Iso3779\Validator';
+		$mock = $this->getMock($original);
+
+		$this->assertInstanceOf($original, $this->vin->getValidator());
+		$this->assertSame($this->vin, $this->vin->setValidator($mock));
+		$this->assertInstanceOf(get_class($mock), $this->vin->getValidator());
+	}
+
+	/**
+	 * @test
+	 */
+	public function resetValidator()
+	{
+		$original = '\libphpvin\Format\Iso3779\Validator';
+		$mock = $this->getMock($original);
+
+		$this->assertInstanceOf($original, $this->vin->getValidator());
+		$this->assertSame($this->vin, $this->vin->setValidator($mock));
+		$this->assertInstanceOf(get_class($mock), $this->vin->getValidator());
+		$this->assertSame($this->vin, $this->vin->resetValidator());
+		$this->assertInstanceOf($original, $this->vin->getValidator());
+	}
+
 	/**
 	 * @test
 	 * @dataProvider providerGetWMI
