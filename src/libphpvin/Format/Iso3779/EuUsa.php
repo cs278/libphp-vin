@@ -62,6 +62,6 @@ abstract class EuUsa extends \libphpvin\Format\Iso3779
 
 	public function resetValidator()
 	{
-		$this->setValidator(new EuUsa\Validator);
+		return $this->setValidator(new EuUsa\Validator);
 	}
 }

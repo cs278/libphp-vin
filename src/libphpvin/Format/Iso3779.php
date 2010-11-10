@@ -55,6 +55,6 @@ class Iso3779 extends \libphpvin\Vin\Base
 
 	public function resetValidator()
 	{
-		$this->setValidator(new Iso3779\Validator);
+		return $this->setValidator(new Iso3779\Validator);
 	}
 }
