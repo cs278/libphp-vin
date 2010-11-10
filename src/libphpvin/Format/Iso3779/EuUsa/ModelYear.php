@@ -23,45 +23,19 @@
  * THE SOFTWARE.
  *
  * @package		libphp-vin
- * @subpackage	Format\Iso3779
+ * @subpackage	Format\Iso3779\EuUsa
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @version		
  */
-namespace libphpvin\Format\Iso3779;
+namespace libphpvin\Format\Iso3779\EuUsa;
 
 /**
  * @package		libphp-vin
- * @subpackage	Format\Iso3779
+ * @subpackage	Format\Iso3779\EuUsa
  * @copyright	Copyright (c) 2010 Chris Smith (http://www.cs278.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  */
-abstract class EuUsa extends \libphpvin\Format\Iso3779
+class ModelYear extends \libphpvin\Vin\Component\Base
 {
-	public function getVehicleAttributes()
-	{
-		return substr($this->getVDS(), 0, 5);
-	}
-
-	public function getCheckDigit()
-	{
-		return substr($this->getVDS(), 5);
-	}
-
-	public function getModelYear()
-	{
-		return new EuUsa\ModelYear(substr($this->getVIS(), 0, 1));
-	}
-
-	public function getPlantCode()
-	{
-		return substr($this->getVIS(), 1, 1);
-	}
-
-	abstract function getSerialNumber();
-
-	public function resetValidator()
-	{
-		$this->setValidator(new EuUsa\Validator);
-	}
 }
