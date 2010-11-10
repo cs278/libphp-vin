@@ -60,4 +60,9 @@ abstract class Base extends Component\Base implements \libphpvin\Vin
 	}
 
 	abstract public function resetValidator();
+
+	public function isValid()
+	{
+		return $this->getValidator()->validate($this)->isValid();
+	}
 }
