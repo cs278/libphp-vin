@@ -76,7 +76,7 @@ class Lotus extends Small
 
 	public function getFactory()
 	{
-		switch ($this->vin[10])
+		switch ($this->_value[10])
 		{
 			case 'H':
 				return 'Hethel, Norfolk, United Kingdom';

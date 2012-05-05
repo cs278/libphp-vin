@@ -64,7 +64,7 @@ class RestOfWorld extends M100
 
 	public function getEngine()
 	{
-		switch (substr($this->vin, 6, 3))
+		switch (substr($this->_value, 6, 3))
 		{
 			case 'ZN1':
 				return '1.6L (4XE1-M)';

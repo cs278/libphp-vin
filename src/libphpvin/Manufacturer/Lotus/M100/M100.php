@@ -69,7 +69,7 @@ abstract class M100 extends Lotus
 
 	public function getDrive()
 	{
-		switch ($this->vin[11])
+		switch ($this->_value[11])
 		{
 			case 'A':
 			case 'D':
@@ -83,7 +83,7 @@ abstract class M100 extends Lotus
 
 	public function getCatalyst()
 	{
-		switch ($this->vin[11])
+		switch ($this->_value[11])
 		{
 			case 'A':
 			case 'F':
@@ -97,7 +97,7 @@ abstract class M100 extends Lotus
 
 	public function getLegislation()
 	{
-		switch ($this->vin[12])
+		switch ($this->_value[12])
 		{
 			case 1:
 				return 'ECE 15.04';
@@ -122,7 +122,7 @@ abstract class M100 extends Lotus
 	 */
 	public function getNumber()
 	{
-		return substr($this->vin, 13, 4);
+		return substr($this->_value, 13, 4);
 	}
 
 	/**

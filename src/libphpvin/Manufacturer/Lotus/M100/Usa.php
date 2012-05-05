@@ -64,7 +64,7 @@ class Usa extends M100
 
 	public function getEngine()
 	{
-		switch ($this->vin[6])
+		switch ($this->_value[6])
 		{
 			case '5':
 				return '1.6L (4XE1-M)';
@@ -76,7 +76,7 @@ class Usa extends M100
 
 	public function getPowerSteering()
 	{
-		switch ($this->vin[5])
+		switch ($this->_value[5])
 		{
 			case '3':
 			case '5':
@@ -90,7 +90,7 @@ class Usa extends M100
 
 	public function getAirConditioning()
 	{
-		switch ($this->vin[5])
+		switch ($this->_value[5])
 		{
 			case '2':
 			case '3':
@@ -104,7 +104,7 @@ class Usa extends M100
 
 	public function getSafetyEquipment()
 	{
-		switch ($this->vin[7])
+		switch ($this->_value[7])
 		{
 			case 'A':
 				return 'Active Belts';
