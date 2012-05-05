@@ -40,7 +40,7 @@ use libphpvin\Exception;
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
  * @see         http://wikilec.9600.org/index.php/VIN
  */
-class RestOfWorld extends Lotus
+class RestOfWorld extends M100
 {
 	public static function factory($vin)
 	{
