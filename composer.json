@@ -1,0 +1,19 @@
+{
+	"name": "cs278/libphp-vin",
+	"description": "A library which eases consumption of VIN numbers.",
+	"homepage": "https://github.com/cs278/libphp-vin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Chris Smith",
+			"email": "chris@cs278.org",
+			"homepage": "http://www.cs278.org/",
+			"role": "Developer"
+		}
+	],
+	"autoload": {
+		"psr-0": {
+			"libphpvin": "src/"
+		}
+	}
+}
