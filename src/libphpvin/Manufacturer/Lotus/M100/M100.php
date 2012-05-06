@@ -45,6 +45,9 @@ abstract class M100 extends Lotus
 	const YEAR_BEGIN = 1990;
 	const YEAR_END = 1995;
 
+	const DRIVE_LEFT = 'L';
+	const DRIVE_RIGHT = 'R';
+
 	public static function factory($vin)
 	{
 		foreach (array('Usa', 'RestOfWorld') as $type)
@@ -73,10 +76,10 @@ abstract class M100 extends Lotus
 		{
 			case 'A':
 			case 'D':
-				return Vin::DRIVE_RIGHT;
+				return self::DRIVE_RIGHT;
 			case 'F':
 			case 'H':
-				return Vin::DRIVE_LEFT;
+				return self::DRIVE_LEFT;
 		}
 		throw new Vin_Exception;
 	}
