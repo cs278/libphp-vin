@@ -64,7 +64,7 @@ abstract class M100 extends Lotus
 
 	public function getYear()
 	{
-		return self::transliterateYear(parent::getModelYear(), self::YEAR_BEGIN, self::YEAR_END);
+		return $this->getModelYear()->getYear(self::YEAR_BEGIN, self::YEAR_END);
 	}
 
 	public function getDrive()

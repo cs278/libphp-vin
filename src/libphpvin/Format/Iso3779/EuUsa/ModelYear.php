@@ -38,4 +38,63 @@ namespace libphpvin\Format\Iso3779\EuUsa;
  */
 class ModelYear extends \libphpvin\Vin\Component\Base
 {
+	const START = 1980;
+	const END = 2019;
+
+	private static $yearAlpha = array(
+		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K',
+		'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'W', 'X',
+		'Y', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+	);
+
+	/**
+	 * Obtain possible years for a year identifier
+	 *
+	 * http://en.wikipedia.org/wiki/Vehicle_Identification_Number#Model_year_encoding
+	 *
+	 * @return int
+	 */
+	public function getYear($start = self::START, $limit = self::END)
+	{
+		$alpha = array_flip(self::$yearAlpha);
+		$year = $this->_value;
+
+		if (!isset($alpha[$year]))
+		{
+			throw new Vin_Exception;
+		}
+
+		$start = max(self::START, $start);
+		$offset = $start - self::START;
+		$singular = (($limit - $start) < sizeof(self::$yearAlpha));
+
+		// Shift the array around
+		$alpha = ($offset) ? array_merge(array_slice(self::$yearAlpha, $offset, null, true), array_slice(self::$yearAlpha, 0, $offset, true)) : self::$yearAlpha;
+
+		if (!$singular)
+		{
+			$_alpha = $alpha;
+
+			// Repeat the array so we can loop until the limit
+			foreach (range(1, (int) ceil(($limit - $start) / sizeof($_alpha))) as $i)
+			{
+				$alpha = array_merge($alpha, $_alpha);
+			}
+
+			unset($_alpha);
+		}
+		$years = array();
+
+		foreach (array_keys(array_intersect($alpha, array($year))) as $value)
+		{
+			if ($start + $value > $limit)
+			{
+				// Year is greater than the limit, bail
+				break;
+			}
+			$years[] = $start + $value;
+		}
+
+		return $singular ? array_shift($years) : $years;
+	}
 }
